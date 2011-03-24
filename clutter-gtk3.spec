@@ -1,7 +1,7 @@
 %define oname clutter-gtk
-%define version 0.90.2
+%define version 0.91.8
 %define git 0
-%define rel 2
+%define rel 1
 %if ! %git
 %define release %mkrel %rel
 %else
@@ -22,13 +22,12 @@ Source0:       %{oname}-%{git}.tar.bz2
 %else
 Source0:       http://www.clutter-project.org/sources/clutter-gtk/%api/%{oname}-%{version}.tar.bz2
 %endif
-Patch0:	clutter-gtk-build-with-new-gtk.patch
 License:       LGPLv2+
 Group:         Graphics
 Url:           http://clutter-project.org/
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: clutter-devel >= 1.3.8
-BuildRequires: gtk+3-devel
+BuildRequires: clutter-devel >= 1.6.0
+BuildRequires: gtk+3-devel >= 2.91.7
 BuildRequires: gtk-doc
 BuildRequires: docbook-dtd412-xml
 BuildRequires: gobject-introspection-devel >= 0.6.14
@@ -82,7 +81,7 @@ Development headers/libraries for %name (see %libname package)
 %install
 rm -rf %buildroot
 
-%makeinstall
+%makeinstall_std
 
 %clean
 rm -rf %buildroot
