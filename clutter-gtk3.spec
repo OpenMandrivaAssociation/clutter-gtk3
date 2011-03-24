@@ -1,7 +1,7 @@
 %define oname clutter-gtk
 %define version 0.91.8
 %define git 0
-%define rel 1
+%define rel 2
 %if ! %git
 %define release %mkrel %rel
 %else
@@ -10,8 +10,8 @@
 
 %define api 1.0
 %define major 0
-%define libname %mklibname %name %api %major
-%define libnamedevel %mklibname -d %name %api
+%define libname %mklibname %oname %api %major
+%define libnamedevel %mklibname -d %oname %api
 
 Summary:       GTK+3 Support for Clutter
 Name:          %{oname}3
@@ -43,6 +43,7 @@ ClutterStage.
 %package -n %libname
 Summary:       GTK+3 Support for Clutter
 Group:         Graphics
+Obsoletes:	%{_lib}clutter-gtk31.0_0 < 0.91.8-2
 
 %description -n %libname
 A library providing facilities to integrate Clutter into GTK+ 3
@@ -58,6 +59,7 @@ Summary:       Development headers/libraries for %name
 Group:         Development/X11
 Provides:      %name-devel = %version-%release
 Requires:      %libname = %version-%release
+Obsoletes:	%{_lib}clutter-gtk31.0-devel < 0.91.8-2
 
 %description -n %libnamedevel
 Development headers/libraries for %name (see %libname package)
