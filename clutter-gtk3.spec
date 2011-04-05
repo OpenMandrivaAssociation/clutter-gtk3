@@ -1,7 +1,7 @@
 %define oname clutter-gtk
-%define version 0.91.8
+%define version 1.0.0
 %define git 0
-%define rel 2
+%define rel 1
 %if ! %git
 %define release %mkrel %rel
 %else
@@ -99,5 +99,5 @@ rm -rf %buildroot
 %_libdir/lib%{oname}-%{api}.so
 %_includedir/clutter-gtk-%{api}/
 %_datadir/gir-1.0/GtkClutter-%api.gir
-%dir %_datadir/gtk-doc/html/%oname
-%doc %_datadir/gtk-doc/html/%oname/*
+%dir %_datadir/gtk-doc/html/%oname-%api 
+%doc %_datadir/gtk-doc/html/%oname-%api/*
