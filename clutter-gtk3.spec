@@ -80,14 +80,14 @@ find %{buildroot} -name *.la | xargs rm
 
 %files -n %{libname}
 %defattr(-,root,root)
-%{_libdir}/lib%{name}-%{api}.so.%{major}*
+%{_libdir}/lib%{oname}-%{api}.so.%{major}*
 
 %files -n %{girname}
 %{_libdir}/girepository-1.0/GtkClutter-%{api}.typelib
 
 %files -n %{develname} -f cluttergtk-%{api}.lang
 %{_libdir}/pkgconfig/%{oname}-%{api}.pc
-%{_libdir}/lib%{name}-%{api}.so
+%{_libdir}/lib%{oname}-%{api}.so
 %dir %{_includedir}/clutter-gtk-%{api}/%{oname}
 %{_includedir}/clutter-gtk-%{api}/%{oname}/
 %{_datadir}/gir-1.0/GtkClutter-%{api}.gir
