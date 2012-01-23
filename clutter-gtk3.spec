@@ -62,7 +62,7 @@ Obsoletes:  %{_lib}clutter-gtk31.0-devel < 0.91.8-2
 Development headers/libraries for %{name} (see %{libname} package)
 
 %prep
-%setup -q %{oname}-%{version}
+%setup -qn %{oname}-%{version}
 %apply_patches
 
 %build
