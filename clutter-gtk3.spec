@@ -20,7 +20,7 @@ BuildRequires: docbook-dtd412-xml
 BuildRequires: gtk-doc
 BuildRequires: pkgconfig(clutter-1.0)
 BuildRequires: pkgconfig(gobject-introspection-1.0)
-BuildRequires: pkgconfig(gtk+3.0)
+BuildRequires: pkgconfig(gtk+-3.0)
 
 %description
 A library providing facilities to integrate Clutter into GTK+
