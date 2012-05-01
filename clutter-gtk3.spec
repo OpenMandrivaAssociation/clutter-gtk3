@@ -19,6 +19,7 @@ Source0:	http://www.clutter-project.org/sources/clutter-gtk/%{api}/%{oname}-%{ve
 BuildRequires: docbook-dtd412-xml
 BuildRequires: gtk-doc
 BuildRequires: pkgconfig(clutter-1.0)
+BuildRequires: pkgconfig(gl)
 BuildRequires: pkgconfig(gobject-introspection-1.0)
 BuildRequires: pkgconfig(gtk+-3.0)
 
