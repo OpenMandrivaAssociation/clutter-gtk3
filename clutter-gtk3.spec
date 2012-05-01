@@ -4,23 +4,23 @@
 %define major 0
 %define gir_major 1.0
 %define libname		%mklibname %{oname} %{api} %{major}
-%define girname     %mklibname %{oname}-gir %{api}
+%define girname		%mklibname %{oname}-gir %{api}
 %define develname	%mklibname -d %{oname} %{api}
 
 Summary:	GTK Support for Clutter
 Name:		%{oname}3
-Version:	1.0.4
-Release:	2
+Version:	1.2.0
+Release:	1
 License:	LGPLv2+
 Group:		Graphics
 Url:		http://clutter-project.org/
 Source0:	http://www.clutter-project.org/sources/clutter-gtk/%{api}/%{oname}-%{version}.tar.xz
 
-BuildRequires: clutter-devel >= 1.0
-BuildRequires: gtk+3-devel
-BuildRequires: gtk-doc
 BuildRequires: docbook-dtd412-xml
-BuildRequires: gobject-introspection-devel >= 0.6.3-0.20090616
+BuildRequires: gtk-doc
+BuildRequires: pkgconfig(clutter-1.0)
+BuildRequires: pkgconfig(gobject-introspection-1.0)
+BuildRequires: pkgconfig(gtk+3.0)
 
 %description
 A library providing facilities to integrate Clutter into GTK+
@@ -46,7 +46,6 @@ ClutterStage.
 %package -n %{girname}
 Summary:	GObject Introspection interface description for %{name}
 Group:		System/Libraries
-Requires:	%{libname} = %{version}-%{release}
 
 %description -n %{girname}
 GObject Introspection interface description for %{name}.
@@ -56,6 +55,7 @@ Summary:	Development headers/libraries for %{name}
 Group:		Development/X11
 Provides:	%{name}-devel = %{version}-%{release}
 Requires:	%{libname} = %{version}-%{release}
+Requires:	%{girname} = %{version}-%{release}
 Obsoletes:  %{_lib}clutter-gtk31.0-devel < 0.91.8-2
 
 %description -n %{develname}
@@ -73,13 +73,11 @@ Development headers/libraries for %{name} (see %{libname} package)
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall
 find %{buildroot} -name *.la | xargs rm
 %find_lang cluttergtk-%{api}
 
 %files -n %{libname}
-%defattr(-,root,root)
 %{_libdir}/lib%{oname}-%{api}.so.%{major}*
 
 %files -n %{girname}
