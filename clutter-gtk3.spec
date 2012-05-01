@@ -88,7 +88,7 @@ find %{buildroot} -name *.la | xargs rm
 %{_libdir}/pkgconfig/%{oname}-%{api}.pc
 %{_libdir}/lib%{oname}-%{api}.so
 %dir %{_includedir}/clutter-gtk-%{api}/%{oname}
-%{_includedir}/clutter-gtk-%{api}/%{oname}/
+%{_includedir}/clutter-gtk-%{api}/%{oname}/*
 %{_datadir}/gir-1.0/GtkClutter-%{api}.gir
 %dir %{_datadir}/gtk-doc/html/%{oname}-%{api}
 %doc %{_datadir}/gtk-doc/html/%{oname}-%{api}/*
