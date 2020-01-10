@@ -64,7 +64,7 @@ Development headers/libraries for %{name} (see %{libname} package)
 
 %prep
 %setup -qn %{oname}-%{version}
-%apply_patches
+%autopatch -p1
 
 %build
 %configure2_5x \
