@@ -13,7 +13,7 @@ Version:	1.2.0
 Release:	1
 License:	LGPLv2+
 Group:		Graphics
-Url:		http://clutter-project.org/
+Url:		https://clutter-project.org/
 Source0:	http://www.clutter-project.org/sources/clutter-gtk/%{api}/%{oname}-%{version}.tar.xz
 
 BuildRequires: docbook-dtd412-xml
