@@ -16,6 +16,11 @@ Group:		Graphics
 Url:		https://clutter-project.org/
 Source0:	http://www.clutter-project.org/sources/clutter-gtk/%{api}/%{oname}-%{version}.tar.xz
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: docbook-dtd412-xml
 BuildRequires: gtk-doc
 BuildRequires: pkgconfig(clutter-1.0)
